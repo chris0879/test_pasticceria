@@ -7,6 +7,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+
+# Test Pasticceria
+
+### Installazione
+- clonare il progetto in locale
+- eseguire "composer install" dalla root del progetto
+- rinominare il file .env.example in .env
+- eseguire "php artisan key:generate"
+- configurare nel file .env  i parametri di accesso al Mysql
+- eseguira la migrazione con i dati demo "php artisan migrate:fresh --seed"
+
+### Configurazione e amministrazione 
+- url di accesso al pannello di backoffice : localhost/admin/login
+- credenziali di accesso: luana@gmail.com / admin
+
+
+#
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
