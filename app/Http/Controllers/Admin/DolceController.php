@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Dolce;
 use App\Models\Ingredienti;
+use App\Http\Requests\Admin\DolceRequest;
 
 class DolceController extends Controller
 {
@@ -39,8 +40,9 @@ class DolceController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function store(Request $request)
+    public function store(DolceRequest $request)
     {
+
         $dolce = new Dolce;
         $dolce->nome = $request->nome;
         $dolce->prezzo = $request->prezzo;
@@ -105,7 +107,7 @@ class DolceController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(Request $request, Dolce $dolce)
+    public function update(DolceRequest $request, Dolce $dolce)
     {
         //dd($request->ingredienti);
         $dolce->nome = $request->nome;
@@ -136,7 +138,8 @@ class DolceController extends Controller
 
     public function destroy(Dolce $dolce)
     {
-        $dolce->delete();
+        //$dolce->delete();
+        $dolce->forceDelete();
         return redirect()->route('admin.dolci.index')->withMessage('Dolce eliminato con successo.');
     }
 }

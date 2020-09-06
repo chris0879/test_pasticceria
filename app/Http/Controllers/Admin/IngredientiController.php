@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Ingredienti;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\IngredientiRequest;
 use App\Http\Controllers\Controller;
 
 class IngredientiController extends Controller
@@ -35,7 +36,7 @@ class IngredientiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IngredientiRequest $request)
     {
         $ingrediente = new Ingredienti();
         $ingrediente->nome = $request->nome;
@@ -83,7 +84,7 @@ class IngredientiController extends Controller
      * @return \Illuminate\Http\Response
      */
     
-    public function update(Request $request, Ingredienti $ingredienti)
+    public function update(IngredientiRequest $request, Ingredienti $ingredienti)
     {
        
         $ingredienti->nome = $request->nome;
@@ -108,7 +109,8 @@ class IngredientiController extends Controller
 
     public function destroy(Ingredienti $ingredienti)
     {
-        $ingredienti->delete();
+        //$ingredienti->delete();
+        $ingredienti->forceDelete();
         return redirect()->route('admin.ingredienti.index')->withMessage('Ingrediente eliminato con successo.');
     }
 }
