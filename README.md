@@ -11,12 +11,13 @@
 # Test Pasticceria
 
 ### Installazione
-- clonare il progetto in locale
+- clonare il progetto in locale con git o fare il dowload dell'intero progetto
 - eseguire "composer install" dalla root del progetto
 - rinominare il file .env.example in .env
 - eseguire "php artisan key:generate"
 - configurare nel file .env  i parametri di accesso al Mysql
 - eseguira la migrazione con i dati demo "php artisan migrate:fresh --seed"
+- avviare l'applicazione dalla root del progetto "php artisan serve --port=7001"
 
 ### Configurazione e amministrazione 
 - url di accesso al pannello di backoffice : localhost/admin/login
