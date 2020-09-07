@@ -1,9 +1,5 @@
 <?php
 
-
-
-
-
 if (! function_exists('giorni_trascorsi')) {
 
     function giorni_trascorsi($creato) {
@@ -32,11 +28,6 @@ if (! function_exists('isExpired')) {
         return false;
     }
 }
-
-
-
-
-
 
 
 
